@@ -12,6 +12,9 @@ RUN apt-get update \
 
 # Copy the requirements file into the container
 COPY requirements.txt .
+COPY wait-for-it.sh /path/in/container/wait-for-it.sh
+RUN chmod +x /path/in/container/wait-for-it.sh
+
 
 # Install app dependencies
 RUN pip install mysqlclient
